@@ -1,4 +1,4 @@
-delay(100);
+
 // using BleKeyboard library to send media control keys to a PC using 3 buttons .
 #include <BleKeyboard.h>
 BleKeyboard bleKeyboard("Media Controler");
