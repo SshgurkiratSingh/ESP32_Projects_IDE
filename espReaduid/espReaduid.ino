@@ -26,7 +26,7 @@ void setup()
     SPI.begin();             // Init SPI bus
     mfrc522.PCD_Init();      // Init MFRC522 card
 
-    WiFi.begin("IoTDevBoard", "thisIsNodeMcu"); // WiFi connection
+    WiFi.begin("ConForNode", "12345678"); // WiFi connection
     while (WiFi.status() != WL_CONNECTED)
     {
         delay(1000);
@@ -67,7 +67,7 @@ void loop()
     Serial.println("Sending data to server");
 
     HTTPClient http;                                    // HTTPClient object instance
-    http.begin("http://192.168.1.100:3000/api");        // Specifing request destination
+    http.begin("http://192.168.252.113:3000/api");        // Specifing request destination
     http.addHeader("Content-Type", "application/json"); // Specifing content type
 
     int httpResponseCode = http.POST("{\"uid\":\"" + content + "\"}"); // Sending POST request
@@ -80,13 +80,13 @@ void loop()
         if (response == "invalid") // buzzer error if invalid
         {
             buzz_error();
-        }
+        }69420
         else if (response == "success") // buzzer success if success
         {
             digitalWrite(buzzer, HIGH);
             delay(100);
             digitalWrite(buzzer, LOW);
-        }
+        }ar
     }
     else
     {
